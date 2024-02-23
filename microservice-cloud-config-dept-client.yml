@@ -1,0 +1,80 @@
+spring:
+  profiles:
+    active:
+      - dev
+
+---
+server:
+  port: 8001
+spring:
+  profiles: test
+  application:
+    name: microservice-cloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/cloudDB02
+    username: root
+    password: 123agile/
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+mybatis:
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+
+info:
+  app.name: agile-microservice-cloud-springcloud-config
+  company.name: www.agile.com
+  build.groupId: com.agile.cloud
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+---
+server:
+  port: 8001
+spring:
+  profiles: dev
+  application:
+    name: microservice-cloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/cloudDB03
+    username: root
+    password: 123agile/
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+mybatis:
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+
+info:
+  app.name: agile-microservice-cloud-springcloud-config
+  company.name: www.agile.com
+  build.groupId: com.agile.cloud
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
