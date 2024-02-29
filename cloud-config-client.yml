@@ -9,7 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservice-cloud-config-client
+    name: cloud-config-client
 eureka:
   client:
     service-url:
@@ -21,7 +21,7 @@ server:
 spring:
   profiles: test
   application:
-    name: microservice-cloud-config-client
+    name: cloud-config-client
 eureka:
   client:
     service-url:
