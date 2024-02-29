@@ -7,7 +7,7 @@ info:
 
 ---
 server:
-  port: 3355
+  port: 3377
 spring:
   profiles: dev
   application:
@@ -19,7 +19,7 @@ eureka:
 
 ---
 server:
-  port: 3355
+  port: 3377
 spring:
   profiles: test
   application:
